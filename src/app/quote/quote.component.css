@@ -3,7 +3,6 @@
 } */
 
 .btn-wrapper {
-  /* border: 1px solid #000000; */
   margin-right: 25px;
   margin-bottom: 25px;
   padding: 10px;
@@ -16,7 +15,8 @@
 .cont-wrapper {
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  grid-gap: 0px 20px;
+  grid-gap: 0px 80px;
+  margin-top: 40px;
 }
 
 .left-cont {
@@ -27,8 +27,8 @@
 
 .right-cont {
   margin-top: 80px;
-  border: 1px solid blue;
-  border-radius: 5px;
+  /* border: 1px solid blue; */
+  /* border-radius: 5px; */
 }
 /* #btn-details {
   margin-left: 40px;
