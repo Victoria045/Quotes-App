@@ -1,7 +1,13 @@
+.nav-wrapper {
+  margin: auto;
+  margin-top: 10px;
+}
+
 ul li {
   display: inline-block;
   list-style-type: none;
-  padding-left: 30px;
+  font-size: 14px;
+  padding-left: 5px;
 }
 
 ul li a {
