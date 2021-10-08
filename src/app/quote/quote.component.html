@@ -1,0 +1,35 @@
+<div class="container cont-wrapper" >
+  <div class="container left-cont">
+    <h3 class="px-5 pt-3" >Posted Quotes</h3>
+      <ul>
+        <div class="btn-wrapper" *ngFor='let quote of quotes;let i = index'>
+          <div class="cont-btn" >
+            <li appHighlight *ngIf="highestUpvote() === quote.upvotes && quote.upvotes>0" >"{{quote.quote}}" posted on {{quote.postedDate | date | uppercase}}. Total of {{quote.postedDate | dateCount}} seconds since last posted.</li>
+            <li *ngIf="highestUpvote()!== quote.upvotes || quote.upvotes === 0">"{{quote.quote}}" posted on {{quote.postedDate | date | uppercase}}. Total of {{quote.postedDate | dateCount}} seconds since last posted.</li>
+    
+            <div class="d-flex justify-content-between"><button class="btn btn-outline-dark" (click)='toggleDetails(i)'>Show Details</button>
+    
+            <div id="btn-details">
+              <button class="btn btn-outline-dark" (click)="upvote(i)" >UpVote</button>
+              <button class="btn btn-outline-dark" (click)="downvote(i)">DownVote</button>
+            </div>
+           </div> 
+            <!-- <app-goal-detail *ngIf='goal.showDescription' [goal]='goal'></app-goal-detail> -->
+            <app-quote-detail *ngIf='quote.showDetails' [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-detail>
+          </div>
+          
+          <!-- <div class="detail-btn">
+            <div><button class="btn btn-outline-dark" >UpVote</button></div>
+            <div><button class="btn btn-outline-dark" >DownVote</button></div>
+          </div> -->
+          
+        </div>
+    
+      </ul>
+  </div>
+  
+  
+  <div class="container right-cont" >
+    <app-quote-form (postQuote)="postNewQuote($event)"></app-quote-form>
+  </div>
+</div>
