@@ -1,51 +1,86 @@
 <div class="container-fluid">
   <h2 class="text-center">Create a new Quote</h2>
 
-  <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
-      <div class="form-group">
+  <form (ngSubmit)="submitQuote()" #quoteForm="ngForm">
+    <div class="form-group">
+      <label for="publisher" class="py-2">Publisher</label>
+      <input
+        type="text"
+        class="form-control"
+        id="publisher"
+        [(ngModel)]="newQuote.publisher"
+        name="publisher"
+        #publisher="ngModel"
+        placeholder="Victoria Beryl"
+        required
+      />
 
-          <label for="publisher">Publisher</label>
-          <!-- <input type="text" required class="form-control" id="name"> -->
-          <input type="text" class="form-control" id="publisher" [(ngModel)]="newQuote.publisher" name="publisher" #publisher='ngModel' required>
-
-          <div [hidden]="publisher.valid || publisher.pristine" class="alert alert-danger">
-            <p>Publisher Name is required</p>
-          </div>
+      <div
+        [hidden]="publisher.valid || publisher.pristine"
+        class="alert alert-danger"
+      >
+        <p>Publisher Name is required</p>
       </div>
-
-
-      <div class="form-group">
-
-        <label for="quote">Quote</label>
-
-        <textarea class="form-control" id="quote" rows="4" [(ngModel)]="newQuote.quote" name="quote" #quote="ngModel" required></textarea>
-        <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
-          <p>Quote is required</p>
-        </div>
     </div>
 
+    <div class="form-group">
+      <label for="quote" class="py-2">Quote</label>
+
+      <textarea
+        class="form-control"
+        id="quote"
+        rows="4"
+        [(ngModel)]="newQuote.quote"
+        name="quote"
+        #quote="ngModel"
+        placeholder="Don't bend; don't water it down; don't try to make it logical; don't edit your own soul according to the fashion. Rather, follow your most intense obsessions mercilessly."
+        required
+      ></textarea>
+      <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+        <p>Quote is required</p>
+      </div>
+    </div>
 
     <div class="form-group">
+      <label for="author" class="py-2">Author</label>
+      <input
+        type="text"
+        class="form-control"
+        id="author"
+        [(ngModel)]="newQuote.author"
+        name="author"
+        #author="ngModel"
+        placeholder="Franz Kafka"
+        required
+      />
 
-      <label for="author">Author</label>
-      <input type="text" class="form-control" id="author" [(ngModel)]="newQuote.author" name="author" #author='ngModel' required>
-
-      <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+      <div
+        [hidden]="author.valid || author.pristine"
+        class="alert alert-danger"
+      >
         <p>Author Name is required</p>
       </div>
+    </div>
 
-  </div>
-
-      <div class="form-group">
-          <label for="postedDate">Date Posted</label>
-          <!-- <input type='date' id="complete" required> -->
-          <input type='date' id="posted" [(ngModel)]="newQuote.postedDate" name="postedDate" #postedDate="ngModel" required>
-          <div [hidden]="postedDate.valid || postedDate.pristine" class="alert alert-danger">
-            <p>Date is required</p>
-          </div>
-
+    <div class="form-group">
+      <label for="postedDate" class="py-3">Date Posted:</label>
+      <input
+        class="mx-2"
+        type="date"
+        id="posted"
+        [(ngModel)]="newQuote.postedDate"
+        name="postedDate"
+        #postedDate="ngModel"
+        required
+      />
+      <div
+        [hidden]="postedDate.valid || postedDate.pristine"
+        class="alert alert-danger"
+      >
+        <p>Date is required</p>
       </div>
+    </div>
 
-      <button type="submit" class="btn btn-success">Post Quote</button>
-    </form>
+    <button type="submit" class="btn btn-success my-2">Post Quote</button>
+  </form>
 </div>
