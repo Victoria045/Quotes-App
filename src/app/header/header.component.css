@@ -1,0 +1,14 @@
+ul li {
+  display: inline-block;
+  list-style-type: none;
+  padding-left: 30px;
+}
+
+ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  color: bisque;
+}
