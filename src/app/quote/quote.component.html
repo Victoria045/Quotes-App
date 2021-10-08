@@ -18,13 +18,15 @@
             {{ quote.postedDate | dateCount }} seconds since last posted.
           </li>
 
-          <div class="d-flex justify-content-between">
-            <button class="btn btn-outline-dark" (click)="toggleDetails(i)">
-              Show Details
-            </button>
-
+          <div class="d-flex justify-content-between mt-2">
+            <div>
+              <button class="btn btn-outline-dark" (click)="toggleDetails(i)">
+                Show Details
+              </button>
+            </div>
+            
             <div id="btn-details">
-              <button class="btn btn-outline-dark" (click)="upvote(i)">
+              <button class="btn btn-outline-dark mx-2" (click)="upvote(i)">
                 UpVote
               </button>
               <button class="btn btn-outline-dark" (click)="downvote(i)">
@@ -32,6 +34,7 @@
               </button>
             </div>
           </div>
+
           <app-quote-detail
             *ngIf="quote.showDetails"
             [quote]="quote"
