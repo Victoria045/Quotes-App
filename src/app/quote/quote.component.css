@@ -28,3 +28,20 @@
 li {
   list-style-type: none;
 }
+
+
+
+@media screen and (max-width: 1366px) {
+  .cont-wrapper {
+    grid-gap: 0px 40px;
+    margin-top: 30px;
+  }
+
+  .left-cont {
+    margin-top: 40px;
+  }
+  
+  .right-cont {
+    margin-top: 40px;
+  }
+}
