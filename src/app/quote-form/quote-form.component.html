@@ -1,5 +1,5 @@
-<div class="container-fluid">
-  <h2 class="text-center">Create a new Quote</h2>
+<div class="container">
+  <h2 class="text-center">Post a new Quote</h2>
 
   <form (ngSubmit)="submitQuote()" #quoteForm="ngForm">
     <div class="form-group">
@@ -65,7 +65,7 @@
     <div class="form-group">
       <label for="postedDate" class="py-3">Date Posted:</label>
       <input
-        class="mx-2"
+        class="datePosted mx-2"
         type="date"
         id="posted"
         [(ngModel)]="newQuote.postedDate"
