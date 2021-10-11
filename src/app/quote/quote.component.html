@@ -5,6 +5,7 @@
       <div class="btn-wrapper" *ngFor="let quote of quotes; let i = index">
         <div class="cont-btn">
           <li
+            class="listCont"
             appHighlight
             *ngIf="highestUpvote() === quote.upvotes && quote.upvotes > 0"
           >
@@ -13,18 +14,23 @@
             {{ quote.postedDate | dateCount }} seconds since last posted.
           </li>
           <li *ngIf="highestUpvote() !== quote.upvotes || quote.upvotes === 0">
-            "{{ quote.quote }}" posted on
-            {{ quote.postedDate | date | uppercase }}. Total of
-            {{ quote.postedDate | dateCount }} seconds since last posted.
+            "{{ quote.quote }}"
+            <div class="listCont mt-2">
+              posted on {{ quote.postedDate | date | uppercase }}.
+              <span class="listCont2"
+                >(Total of {{ quote.postedDate | dateCount }} seconds since last
+                posted.)</span
+              >
+            </div>
           </li>
 
           <div class="d-flex justify-content-between mt-2">
             <div>
               <button class="btn btn-outline-dark" (click)="toggleDetails(i)">
-                Show Details
+                Quote Details
               </button>
             </div>
-            
+
             <div id="btn-details">
               <button class="btn btn-outline-dark mx-2" (click)="upvote(i)">
                 UpVote
