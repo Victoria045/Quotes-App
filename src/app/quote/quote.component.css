@@ -23,6 +23,16 @@
 
 .right-cont {
   margin-top: 80px;
+  background-color: #C0F1FF;
+  border-radius: 5px;
+}
+
+.listCont {
+  color: red;
+}
+
+.listCont2{
+  color: blue;
 }
 
 li {
