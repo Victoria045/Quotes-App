@@ -3,6 +3,10 @@
   padding: 0px 30px 0px 30px;
 }
 
+h2{
+  font-family: 'Patrick Hand', cursive;
+}
+
 .form-control, .datePosted {
   background-color: transparent;
   border-color: #000000;
