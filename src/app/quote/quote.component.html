@@ -18,7 +18,7 @@
             <div class="listCont mt-2">
               posted on {{ quote.postedDate | date | uppercase }}.
               <span class="listCont2"
-                >(Total of {{ quote.postedDate | dateCount }} seconds since last
+                >({{ quote.postedDate | dateCount }} days since last
                 posted.)</span
               >
             </div>
