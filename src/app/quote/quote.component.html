@@ -10,8 +10,8 @@
             *ngIf="highestUpvote() === quote.upvotes && quote.upvotes > 0"
           >
             "{{ quote.quote }}" posted on
-            {{ quote.postedDate | date | uppercase }}. Total of
-            {{ quote.postedDate | dateCount }} seconds since last posted.
+            {{ quote.postedDate | date | uppercase }}.
+            {{ quote.postedDate | dateCount }} days since last posted.
           </li>
           <li *ngIf="highestUpvote() !== quote.upvotes || quote.upvotes === 0">
             "{{ quote.quote }}"
