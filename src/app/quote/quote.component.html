@@ -5,21 +5,19 @@
       <div class="btn-wrapper" *ngFor="let quote of quotes; let i = index">
         <div class="cont-btn">
           <li
-            class="listCont"
             appHighlight
             *ngIf="highestUpvote() === quote.upvotes && quote.upvotes > 0"
           >
             "{{ quote.quote }}" posted on
             {{ quote.postedDate | date | uppercase }}.
-            {{ quote.postedDate | dateCount }} days since last posted.
+            {{ quote.postedDate | dateCount }}
           </li>
           <li *ngIf="highestUpvote() !== quote.upvotes || quote.upvotes === 0">
             "{{ quote.quote }}"
             <div class="listCont mt-2">
               posted on {{ quote.postedDate | date | uppercase }}.
               <span class="listCont2"
-                >({{ quote.postedDate | dateCount }} days since last
-                posted.)</span
+                >({{ quote.postedDate | dateCount }})</span
               >
             </div>
           </li>
